@@ -1,0 +1,38 @@
+<% title @meta.title %>
+<% meta_tag :description, @meta.description[0, 140] %>
+<!-- Third Parallax Image with Portfolio Text -->
+<div class="bgimg-3 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+     <span class="w3-xxlarge w3-text-white w3-wide w3-pink w3-padding"><%= @newsitem.title %></span>
+  </div>
+</div>
+
+
+<!-- Container (Contact Section) -->
+<div class="w3-content w3-container w3-padding-64" id="contact">
+  
+<div class="w3-col m5 w3-margin">
+  <img src="/assets/<%= @newsitem.image1 %>" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Happy Kids Pre-School and Montessori | <%= @newsitem.image1 %>">
+    
+</div>
+
+<div class="w3-col m5 w3-margin">
+  <img src="/assets/<%= @newsitem.image2 %>" style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Happy Kids Pre-School and Montessori | <%= @newsitem.image1 %>">
+    
+</div>
+
+
+
+
+  <div class="w3-row w3-padding-32 w3-section">
+
+    <div class="w3-col m12 w3-panel">
+      <div class="w3-large w3-margin-bottom">
+      <h2><%= @newsitem.title %></h2>
+        <p class="w3-justify" style="margin-left:8px;margin-right:8px;white-space: pre-line;" ><%= sanitize @newsitem.description.html_safe %></p>
+      </div>
+
+      
+    </div>
+  </div>
+</div>

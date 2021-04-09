@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<title>
+  <%= if content_for?(:title) then yield(:title) + ' | ' end %>
+  Happy Kids Pre-School
+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+
+
+<meta name='description'  content='<%= yield_meta_tag(:description, 'Happy Kids Pre School and Montessori Carnuff Little Dean Hill Naven Co. Meath') %>' />
+
+
+
+<body>
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="/" class="w3-bar-item w3-button w3-wide">Happy Kids Pre-School</a>
+    <!-- Right-sided navbar links -->
+    <div class="w3-right w3-hide-small">
+
+        <% if user_signed_in? %>
+        <a href="#about" class="w3-bar-item w3-button">Hi, <%= current_user.username.upcase %></a>
+
+             
+                 <%= link_to '<i class="fa fa-user"></i> ''LOG-OUT'.html_safe, destroy_user_session_path, method: :delete,  class: "w3-bar-item w3-button" %>
+          <%= link_to 'PROFILE', edit_user_registration_path,  class: "w3-bar-item w3-button" %>
+          <% else %>
+                 <%= link_to '<i class="fa fa-user"></i> ''REGISTER'.html_safe, new_user_registration_path, class: "w3-bar-item w3-button" %>
+                 <%= link_to '<i class="fa fa-user"></i> ''SIGN-IN'.html_safe, new_user_session_path,  class: "w3-bar-item w3-button" %>
+          <% end %>
+
+
+
+
+
+
+
+      <a href="#about" class="w3-bar-item w3-button">ENROLL</a>
+      <a href="/admin" class="w3-bar-item w3-button"><i class="fa fa-user"></i> STAFF</a>
+      <a href="#work" class="w3-bar-item w3-button"><i class="fa fa-th"></i> GALLERY</a>
+      <a href="/contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> CONTACT</a>
+
+
+
+
+<% if current_user %>
+  <% if current_user.admin? %>
+    <a href="/admin" class="w3-bar-item w3-button"><i class="fa fa-usd"></i> ADMIN</a>
+  
+  <% end %>
+
+<% end %>
+
+
+      
+
+
+
+
+
+
+
+    </div>
+    <!-- Hide right-floated links on small screens and replace them with a menu icon -->
+
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<!-- Sidebar on small screens when clicking the menu icon -->
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT</a>
+  <a href="#team" onclick="w3_close()" class="w3-bar-item w3-button">TEAM</a>
+  <a href="#work" onclick="w3_close()" class="w3-bar-item w3-button">WORK</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+
+
+<%= yield %>
+
+
+
+
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+
+<div class="w3-col m4 w3-container"><h3>Happy Kids Pre-School</h3>
+
+<p>Carnuff Little<br>
+Deanhill<br>
+Navan<br>
+Co. Meath<br>
+C15WY01</p>
+
+</div>
+
+<div class="w3-col m4 w3-container">
+
+<h3>Useful Links</h3>
+<p>Index<br>
+About Us<br>
+What We Do
+</p>
+</div>
+
+<div class="w3-col m4 w3-container">
+<h3>Resources</h3>
+<p>
+Destination<br>
+Blog<br>
+Blog Details
+
+</p>
+</div>
+
+
+
+
+<div class="w3-row">&copy; <%= Time.current.year %> Happy Kids Pre-School | All Rights Reserve</div>
+
+
+
+
+
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fa fa-facebook-official w3-hover-opacity"></i>
+    <i class="fa fa-instagram w3-hover-opacity"></i>
+    <i class="fa fa-snapchat w3-hover-opacity"></i>
+    <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+    <i class="fa fa-twitter w3-hover-opacity"></i>
+    <i class="fa fa-linkedin w3-hover-opacity"></i>
+  </div>
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+</body>
+</html>
+

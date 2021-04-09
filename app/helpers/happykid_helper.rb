@@ -1,0 +1,2 @@
+module HappykidHelper
+end

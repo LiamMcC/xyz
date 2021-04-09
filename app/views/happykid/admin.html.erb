@@ -1,0 +1,147 @@
+<!-- Second Parallax Image with Portfolio Text -->
+  <div class="bgimg-4 w3-display-container w3-opacity-min">
+    <div class="w3-display-middle">
+      <span class="w3-xxlarge w3-text-black w3-wide w3-orange w3-padding">Admin Only Page</span>
+    </div>
+  </div>
+
+
+<div class="w3-content w3-container w3-padding-64" >
+
+
+<div class="w3-row-padding w3-center">
+<h3 class="w3-center">Opening Times</h3>
+
+<table id="times">
+
+<th>Day</th>
+<th>To</th>
+<th>From</th>
+<th>On Show</th>
+<th>Edit</th>
+<th>Delete</th>
+<% @happykid.each do |item| %>
+ <tr>
+   
+    <td><%= item.day %></td>
+    <td><%= item.to %></td>
+    <td><%= item.from %></td>
+    <td><%= item.on %></td>
+    <td><a href='/edittime/<%= item.id %>' class="w3-button w3-orange">Edit Me</a></td>
+    <td><a href="/deletetime/<%= item.id %>" class="w3-button w3-red">Delete Me</a></td>
+  <tr>        
+       
+    <% end %>
+
+    </table>
+
+    <a href="/add/openigtime"  class="w3-button w3-black w3-right w3-section" >Make a new Time</a>
+
+  </div>
+
+</div>
+
+  <div class="w3-content w3-container w3-padding-64" >
+
+
+<div class="w3-row-padding w3-center">
+<h3 class="w3-center">Promotions</h3>
+
+<table id="times">
+
+<th>Title</th>
+
+<th>Image 1</th>
+<th>Position</th>
+<th>On</th>
+<th>Edit</th>
+<th>Delete</th>
+<% @promo.each do |promo| %>
+ <tr>
+   
+    <td><%= promo.title %></td>
+  
+    <td><%= promo.image1 %></td>
+    <td><%= promo.position %></td>
+    <td><%= promo.on %></td>
+    <td><a href='/editpromo/<%= promo.id %>' class="w3-button w3-orange">Edit Me</a></td>
+    <td><a href="/deletepromo/<%= promo.id %>" class="w3-button w3-red">Delete Me</a></td>
+  <tr>        
+       
+    <% end %>
+
+    </table>
+
+    <a href="/add/promo"  class="w3-button w3-black w3-right w3-section" >Make a new Promo</a>
+  </div>
+
+
+
+<div class="w3-row-padding w3-center">
+<h3 class="w3-center">News</h3>
+
+<table id="times">
+
+<th>Title</th>
+<th>Image 1</th>
+<th>Position</th>
+<th>Edit Vid</th>
+<th>Edit</th>
+<th>Delete</th>
+<% @news.each do |news| %>
+ <tr>
+   
+    <td><%= news.title %></td>
+  
+    <td><%= news.image1 %></td>
+    <td><%= news.position %></td>
+    <td><a href="/editnewsvid/<%= news.id %>" style="text-decoration: none;"><i class="fa fa-file-video-o"></a></td>
+    <td><a href='/editnews/<%= news.id %>' class="w3-button w3-orange">Edit Me</a></td>
+    <td><a href="/deletnews/<%= news.id %>" class="w3-button w3-red">Delete Me</a></td>
+  <tr>        
+       
+    <% end %>
+
+    </table>
+
+    <a href="/add/news"  class="w3-button w3-black w3-right w3-section" >Make a new News Item</a>
+  </div>
+
+
+
+
+
+
+
+
+<div class="w3-row-padding w3-center">
+<h3 class="w3-center">Website Information</h3>
+
+<table id="times">
+
+<th>Title</th>
+<th>Image 1</th>
+<th>Position</th>
+<th>Edit</th>
+<th>Delete</th>
+<% @siteInfo.each do |news| %>
+ <tr>
+   
+    <td><%= news.title %></td>
+  
+    <td><%= news.image %></td>
+    <td><%= news.position %></td>
+    
+    <td><a href='/editinfo/<%= news.id %>' class="w3-button w3-orange">Edit Me</a></td>
+    <td><a href="/deletinfo/<%= news.id %>" class="w3-button w3-red">Delete Me</a></td>
+  <tr>        
+       
+    <% end %>
+
+    </table>
+
+    <a href="/add/info"  class="w3-button w3-black w3-right w3-section" >Make New Site Info</a>
+  </div>
+
+
+</div>

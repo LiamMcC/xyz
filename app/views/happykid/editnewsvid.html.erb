@@ -1,0 +1,32 @@
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">Edit News Items</h3>
+<p>Note: Positions 1 - 6 will set the order they appear on the home page  </p>
+<p>Note: When Editing you must re-upload the video</p>
+Edit <%= @nox %>
+
+
+<%= form_for :news, :html => {:multipart => true} do |f| %>
+  
+  
+
+  <div class="field">
+    <%= @title %>
+   
+  </div>
+
+
+
+ <div class="field">
+    <p>Video name... <%= @video %> </p>
+    <%= f.file_field :whyted, :value => @video, :class =>"w3-input w3-border" %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Update!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+<% end %>
+
+
+</div>

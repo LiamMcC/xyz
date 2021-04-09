@@ -1,0 +1,104 @@
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif}
+
+body, html {
+  height: 100%;
+  line-height: 1.8;
+}
+/* Create a Parallax Effect */
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4, .bgimg-5 {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+
+/* Turn off parallax scrolling for tablets and phones */
+@media only screen and (max-device-width: 1000px) {
+  .bgimg-1, .bgimg-2, .bgimg-3 , .bgimg-4, .bgimg-5{
+    background-attachment: scroll;
+    min-height: 400px;
+  }
+}
+
+
+
+/* Full height image header */
+.bgimg-1 {
+
+  background-image: url("/assets/site/2.JPG");
+  min-height: 100%;
+}
+
+
+.bgimg-2 {
+  background-image: url("/assets/site/qwert.jpg");
+  min-height: 400px;
+}
+
+/* Third image (Contact) */
+.bgimg-3 {
+  background-image: url("/assets/site/b5.jpg");
+  min-height: 400px;
+}
+
+
+/* Third image (Admin Page title) */
+.bgimg-4 {
+  background-image: url("/assets/site/b5.jpg");
+  min-height: 400px;
+}
+
+
+/* Third image (Admin Page title) */
+.bgimg-5 {
+  background-image: url("/assets/site/bg1a.jpg");
+  min-height: 400px;
+}
+
+.w3-bar .w3-button {
+    padding: 16px;
+  }
+
+
+
+  #times {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #times td, #times th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  #times tr:nth-child(even) {
+    background-color: #ccddff;
+  }
+
+
+  #openhome {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #openhome td, #openhome th {
+    background-color: #ccddff;
+    padding: 1px;
+  }
+  
+  
+  
+  
+  
+  #openhome th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #ccddff;
+    color: white;
+  }  
