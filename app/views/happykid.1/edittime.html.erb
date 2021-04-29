@@ -1,0 +1,46 @@
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">Edit Opening Times</h3>
+
+Edit <%= @nox %>
+
+
+<%= form_for :opening_times do |f| %>
+  
+  
+
+  <div class="field">
+    <%= f.label :Day %>
+    <%= f.text_field :day, :value => @day, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :From %>
+    <%= f.text_field :from, :value => @from, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :To %>
+    <%= f.text_field :to, :value => @to, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :On %>
+    <%= f.text_field :on, :value => @on, :class =>"w3-input w3-border" %>
+  </div>
+
+     <div class="field">
+    <%= f.label :OPosition %>
+    <%= f.text_field :position, :value => @position, :class =>"w3-input w3-border" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Create!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+<% end %>
+
+
+</div>

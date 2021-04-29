@@ -1,0 +1,27 @@
+<!-- Container (About Section) -->
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center w3-xxlarge w3-text-white w3-wide w3-pink w3-paddin">HAPPY KIDS STAFF</h3>
+  
+  
+  <div class="w3-row">
+    <div class="w3-col m5 w3-center w3-padding-large">
+
+<% @staff.each do |promo| %>
+ <h3><%= promo.name %></h3>
+      <img src="/assets/<%= promo.image %>" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Happy Kids Pre School | <%= promo.image %>" width="500" height="333">
+   
+   
+   <p class="w3-justify" style="margin-left:8px;margin-right:8px;"><%= sanitize promo.description[0, 170].html_safe %></p>
+   
+   <p><a href="/singlestaff/<%= promo.name.gsub(' ','-') %>">More...</a>
+   </p>
+
+    <% end %>
+
+
+
+
+    
+    </div>
+    </div>
+    </div>

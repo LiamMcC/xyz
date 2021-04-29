@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-gem 'mysql2', '>= 0.3.18', '< 0.6.0'
+gem 'mysql2', '0.5.3'
 ruby '2.6.3'
 gem 'devise'
 

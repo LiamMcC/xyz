@@ -142,6 +142,41 @@
 
     <a href="/add/info"  class="w3-button w3-black w3-right w3-section" >Make New Site Info</a>
   </div>
+  
+  
+  
+  <div class="w3-row-padding w3-center">
+<h3 class="w3-center">Staff</h3>
+
+<table id="times">
+
+<th>Name</th>
+<th>Image </th>
+<th>Description</th>
+
+<th>Edit</th>
+<th>Delete</th>
+<% @staff.each do |news| %>
+ <tr>
+   
+    <td><%= news.name %></td>
+  
+    <td><%= news.image %></td>
+    <td><%= news.description %></td>
+   
+    <td><a href='/editstaff/<%= news.id %>' class="w3-button w3-orange">Edit Me</a></td>
+    <td><a href="/deletstaff/<%= news.id %>" class="w3-button w3-red">Delete Me</a></td>
+  <tr>        
+       
+    <% end %>
+
+    </table>
+
+    <a href="/add/staff"  class="w3-button w3-black w3-right w3-section" >Add Staff Member</a>
+  </div>
+  
+  
+  
 
 
 </div>

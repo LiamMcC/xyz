@@ -44,6 +44,7 @@ class HappykidController < ApplicationController
     @promo = Promo.all
     @news = News.all
     @siteInfo = SiteInfo.all
+    @staff = Staff.all
   end
 
 # Open page to add nwe opening time
@@ -105,8 +106,105 @@ class HappykidController < ApplicationController
 
          ################  OPENING TIMES END HERE #####################
 
+############# staff controller
+
+def staff
+  @meta = "All Staff Stuff"
+  @staff = Staff.all
+end 
 
 
+def addstaff
+  
+end
+
+def singlestaff
+  
+   @staff = Staff.find_by(name: params[:id].gsub('-',' '))
+    @meta = @staff
+  
+end
+
+def editstaff
+  
+      @newsx = params[:id]
+        @newsf = Staff.find_by(id: params[:id]) 
+
+          @name = @newsf.name
+          @description = @newsf.description
+          @image = @newsf.image
+          @id = @newsf.id
+          
+       
+  
+end
+
+
+def changestaff
+    @staff = Staff.find_by(id: params[:id])
+      @staff.update_attribute(:name , params[:staff][:name])
+      @staff.update_attribute(:description , params[:staff][:description])
+     #  @staff.update_attribute(:to , params[:staff][:image])
+     
+          
+    redirect_to "/admin"
+  
+end
+
+
+       def makestaff
+
+            staff = Staff.new do |u|
+              u.name = params[:staff][:name]
+              u.description = params[:staff][:description]
+              u.image = params[:staff][:image].original_filename
+              
+             
+              
+
+tmp = params[:staff][:image].tempfile
+    #require 'ftools'
+    file = File.join("app/assets/images", params[:staff][:image].original_filename) # use public if you want
+  FileUtils.cp tmp.path, file
+
+  
+            end
+            staff.save
+            redirect_to "/admin"
+          end
+
+
+def editstaffimage
+  @staffx = params[:id]
+  @stafff = Staff.find_by(id: params[:id]) 
+
+    @name = @stafff.name
+  
+    @image = @stafff.image
+
+    
+end
+
+# A url to change videos  
+def changestaffimage
+  @staff = Staff.find_by(id: params[:id])
+  @staff.update_attribute(:image , params[:staff][:image].original_filename)
+  
+  
+  
+  tmp = params[:staff][:image].tempfile
+    #require 'ftools'
+    file = File.join("app/assets/images", params[:staff][:image].original_filename) # use public if you want
+  FileUtils.cp tmp.path, file
+  
+  
+  redirect_to "/admin"
+end
+
+
+
+
+############ end staff controls
 
 
 

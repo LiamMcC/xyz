@@ -1,0 +1,56 @@
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-black w3-wide">Make a new Promo</span>
+  </div>
+</div>
+
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+  
+
+
+<%= form_for :promo, :html => {:multipart => true} do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :description %>
+    <p>For sub headings use proper HTML</p>
+    <%= f.text_area :description, :class =>"w3-input w3-border"%>
+  </div>
+
+   <div class="field">
+    <%= f.label :image1 %>
+    <%= f.file_field :image1x, :class =>"w3-input w3-border"%>
+  </div>
+
+
+      <div class="field">
+    <%= f.label :image2 %>
+    <%= f.file_field :image2x, :class =>"w3-input w3-border" %>
+  </div>
+
+
+    <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position, :class =>"w3-input w3-border" %>
+  </div>
+
+      <div class="field">
+    <%= f.label :on %> 
+    <%= f.text_field :on, :class =>"w3-input w3-border" %>
+  </div>
+
+
+  
+  <div class="actions">
+    <%= f.submit "Create!", class: "w3-button w3-black w3-right w3-section" %>
+  </div>
+<% end %>
+
+</div>

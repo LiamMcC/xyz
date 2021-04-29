@@ -1,0 +1,55 @@
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">Edit Promotion</h3>
+<p>Note: If position is set to 1 it will appear beside the opening times on the home page</p>
+<p>If Position is 2,3,4,5,6 or 7 it will appear on the home page</p>
+<p>The last field true or false means there is a video if there is a video image 2 in the main page will be replaced by a video</p>
+Edit <%= @nox %>
+
+
+<%= form_for :promo do |f| %>
+  
+  
+
+  <div class="field">
+    <%= f.label :Title %>
+    <%= f.text_field :title, :value => @title, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :value => @description, :class =>"w3-input w3-border", rows: 10 %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :Image1 %>
+    <%= f.text_field :image1, :value => @image1, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :Image2 %>
+    <%= f.text_field :image2, :value => @image2, :class =>"w3-input w3-border" %>
+  </div>
+
+     <div class="field">
+    <%= f.label :Position %>
+    <%= f.text_field :position, :value => @position, :class =>"w3-input w3-border" %>
+  </div>
+
+
+
+       <div class="field">
+    <p>Video to be used: true or fase (use lower case)</p>
+    <%= f.text_field :on, :value => @on, :class =>"w3-input w3-border" %>
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Update!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+<% end %>
+
+
+</div>

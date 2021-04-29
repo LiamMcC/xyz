@@ -17,6 +17,15 @@ Rails.application.routes.draw do
 
 
   post '/contact' => 'happykid#create'
+ get '/staff' => 'happykid#staff'
+ get '/add/staff' => 'happykid#addstaff'
+  get '/editstaff/:id' => 'happykid#editstaff'
+  post '/editstaff/:id' => 'happykid#changestaff'
+post '/add/staff' => 'happykid#makestaff'
+get '/singlestaff/:id' => 'happykid#singlestaff'
+get '/editstaffimage/:id' => 'happykid#editstaffimage'
+post '/editstaffimage/:id' => 'happykid#changestaffimage'
+
 ####################### Admin routes here ###################################
 
 # Upload video

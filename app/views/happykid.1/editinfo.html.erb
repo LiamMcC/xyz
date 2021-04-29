@@ -1,0 +1,56 @@
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">Modify Site Information</h3>
+
+Edit <%= @nox %>
+
+
+<%= form_for :news, :html => {:multipart => true} do |f| %>
+  
+  
+
+  <div class="field">
+    <%= f.label :Title %>
+    <%= f.text_field :title, :value => @title, :class =>"w3-input w3-border" %>
+  </div>
+
+<div class="field">
+    <%= f.label :SubTitle %>
+    <%= f.text_field :subtitle, :value => @subtitle, :class =>"w3-input w3-border" %>
+  </div>
+
+   <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, :value => @description, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :Image %>
+    <%= f.text_field :image, :value => @image, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :Image2 %>
+    <%= f.text_field :image2, :value => @image2, :class =>"w3-input w3-border" %>
+  </div>
+
+     <div class="field">
+    <%= f.label :Position %>
+    <%= f.text_field :position, :value => @position, :class =>"w3-input w3-border" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :Picture %>
+    <%= f.file_field :picturexxx, :value => @positionxxx, :class =>"w3-input w3-border" %>
+    
+  </div>
+
+
+  <div class="actions">
+    <%= f.submit "Update!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+<% end %>
+
+
+</div>

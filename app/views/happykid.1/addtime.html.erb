@@ -1,0 +1,44 @@
+
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-black w3-wide">Make A New Opening Time</span>
+  </div>
+</div>
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+  
+
+
+<%= form_for :opening_times do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :day %>
+    <%= f.text_field :day, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :from %>
+    <%= f.text_field :from, :class =>"w3-input w3-border"%>
+  </div>
+
+   <div class="field">
+    <%= f.label :to %>
+    <%= f.text_field :to, :class =>"w3-input w3-border"%>
+  </div>
+
+    <div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position, :class =>"w3-input w3-border" %>
+  </div>
+
+
+
+  
+  <div class="actions">
+    <%= f.submit "Create!", class: "w3-button w3-black w3-right w3-section" %>
+  </div>
+<% end %>
+
+</div>

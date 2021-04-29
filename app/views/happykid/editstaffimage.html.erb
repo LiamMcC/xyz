@@ -1,0 +1,31 @@
+<div class="w3-content w3-container w3-padding-64" id="about">
+  <h3 class="w3-center">Edit News Items</h3>
+
+Edit <%= @nox %> Image 
+
+
+<%= form_for :staff, :html => {:multipart => true} do |f| %>
+  
+  
+
+  <div class="field">
+    <%= @title %>
+   
+  </div>
+
+
+
+ <div class="field">
+    <p>Pick a new image for <%= @name %> </p>
+    <%= f.file_field :image, :value => @image, :class =>"w3-input w3-border" %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Update!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+<% end %>
+
+
+</div>

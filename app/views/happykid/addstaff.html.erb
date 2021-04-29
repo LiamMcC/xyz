@@ -1,0 +1,45 @@
+<div class="bgimg-4 w3-display-container w3-opacity-min">
+  <div class="w3-display-middle">
+    <span class="w3-xxlarge w3-text-black w3-wide">Add A new Staff Member</span>
+    
+  </div>
+</div>
+
+
+<div class="w3-content w3-container w3-padding-64" id="about">
+  
+
+
+<%= form_for :staff do |f| %>
+  
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :class =>"w3-input w3-border" %>
+  </div>
+
+
+   <div class="field">
+    <%= f.label :description %>
+    <%= f.text_area :description, :class =>"w3-input w3-border"%>
+  </div>
+
+   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image, :class =>"w3-input w3-border"%>
+  </div>
+
+
+   
+
+
+
+
+
+  
+  <div class="actions">
+    <%= f.submit "Create!", class: "w3-button w3-black w3-right w3-section" %>
+  </div>
+<% end %>
+
+</div>
