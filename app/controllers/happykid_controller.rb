@@ -105,6 +105,47 @@ class HappykidController < ApplicationController
 
 
          ################  OPENING TIMES END HERE #####################
+         
+         
+         
+         ############################# gallery functions
+
+def gallery
+  
+  @gallery = Picture.all
+
+end
+
+def newImage
+  
+  
+   galimage = Picture.new do |u|
+             # u.image = params[:galleryim][:name]
+              u.description = params[:galleryim][:description]
+              u.alt = params[:galleryim][:atttext]
+              u.image = params[:galleryim][:thepic].original_filename
+              
+              
+              tmp = params[:galleryim][:thepic].tempfile
+    #require 'ftools'
+    file = File.join("app/assets/images", params[:galleryim][:thepic].original_filename) # use public if you want
+  FileUtils.cp tmp.path, file
+  end
+  
+  galimage.save
+   redirect_to "/gallery"
+end
+
+
+   def deletegallery
+            Picture.find(params[:id]).destroy
+            redirect_to "/admin"
+        end
+
+############################# End gallery
+         
+         
+         
 
 ############# staff controller
 
@@ -117,6 +158,11 @@ end
 def addstaff
   
 end
+
+       def deletestaff
+            Staff.find(params[:id]).destroy
+            redirect_to "/admin"
+        end
 
 def singlestaff
   
@@ -505,5 +551,9 @@ private
 def news_params
   params.require(:news).permit(:video)
 end
+
+
+
+
 
 end

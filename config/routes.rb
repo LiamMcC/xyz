@@ -28,6 +28,19 @@ post '/editstaffimage/:id' => 'happykid#changestaffimage'
 
 ####################### Admin routes here ###################################
 
+
+######### Gallery controls
+get '/gallery'=> 'happykid#gallery'
+
+
+post '/uploadgalimage' => 'happykid#newImage'
+ get '/deletegallery/:id' => 'happykid#deletegallery'
+
+######## end gallery controls
+
+
+
+
 # Upload video
 post '/admin' => 'happykid#savevid'
 

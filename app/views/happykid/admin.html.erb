@@ -176,7 +176,52 @@
   </div>
   
   
-  
+  <div class="w3-row-padding w3-center">
+<h3 class="w3-center">Additional Items</h3>
+<p id="gimage">Upload Image to gallery</p>
 
+<div class="w3-row-padding w3-center" id="gupload" style="display:none;">
+<%= form_for :galleryim,  :html => {:multipart => true}, :url => { :action => :newImage } do |f| %>
+  
+  <div class="field">
+    <%= f.label :description %>
+    <%= f.text_field :description, :class =>"w3-input w3-border" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :altText %>
+    <%= f.text_field :alttext, :class =>"w3-input w3-border" %>
+  </div>
+
+
+<div class="field">
+    <%= f.label :position %>
+    <%= f.text_field :position, :class =>"w3-input w3-border" %>
+  </div>
+  
+  
+    <div class="field">
+    <p>Pick a new image for <%= @name %> </p>
+    <%= f.file_field :thepic, :value => @image, :class =>"w3-input w3-border" %>
+  </div>
+  
+    <div class="actions">
+    <%= f.submit "Upload!", class: "w3-button w3-black w3-right w3-section"  %>
+  </div>
+
+  
+ <% end %>
+ 
+</div>
+</div>
 
 </div>
+
+
+<script>
+$(document).ready(function(){
+  $("#gimage").click(function(){
+    $("#gupload").slideToggle();
+  });
+});
+</script>

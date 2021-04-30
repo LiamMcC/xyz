@@ -13,18 +13,18 @@
 
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :class =>"w3-input w3-border"%>
   </div>
   <div class="field">
     <%= f.label :email %><br />
-    <%= f.text_field :email %>
+    <%= f.text_field :email, :class =>"w3-input w3-border" %>
   </div>
   <div class="field">
     <%= f.label :message %><br />
-    <%= f.text_area :message %>
+    <%= f.text_area :message, :class =>"w3-input w3-border" %>
   </div>
   <div class="actions">
-    <%= f.submit "Send"%>
+    <%= f.submit "Send", class: "w3-button w3-black w3-right w3-section"%>
   </div>
 <% end %>
 </div>
